@@ -88,3 +88,23 @@ const arregloDeVehiculos : Vehiculo[] = [ ferrari, moto]
 for (const vehiculo of arregloDeVehiculos) {
   console.log(vehiculo.getNumeroPuertas());
 }
+
+/******************************************************  Shapes   ****************************************************************/
+
+
+class Persona {
+    nombre: string;
+    edad: number;
+  }
+  
+  class Persona2 {
+    nombre: string;
+    edad: number;
+  }
+  
+  let persona1 = new Persona();
+  let persona2 = new Persona2();
+  let persona3: Persona = persona2; //Esto funciona ya que los dos objetos a pesar de ser construidos a bases de clases diferentes los dos tienen la misma estructura. 
+
+
+/******************************************************  Class vs Interface   ****************************************************************/
