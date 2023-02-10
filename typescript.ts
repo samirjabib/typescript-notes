@@ -128,8 +128,27 @@ const personaInterface : PersonaInterface = {
 }
 
 
+// const personaInterface : Partial<PersonaInterface> = { //Con partial le estamos indicando que las propiedades son parcialmente requeridas. 
+//     nombre:"samir",
+//     edad:26,
+//     dni:1067948715 
+//     //No podemos asignar propiedades que no estan en al inferface. 
+// }
+
+
+// const personaInterface : Required<PersonaInterface> = { //Con esto le indicamos que todas las propiedades son obligatorias.
+//     nombre:"samir",
+//     edad:26,
+//     dni:1067948715 
+//     //No podemos asignar propiedades que no estan en al inferface. 
+// }
+
+
 const alumnoInterface : AlumnoInterface = {
     nombre:"samir",
     edad:26,
     curso:'typescript'
 }
+
+
+/******************************************************  Types   ****************************************************************/
