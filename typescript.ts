@@ -1,7 +1,5 @@
 /******************************************************  Interferencia de tipos   ***************************************************************++ */
 
-
-
 /*
     let numero = 1; //typescript por debajo si no asignamos el tipo de dato, el por debajo ya esta haciendo el tipado. 
     numero="2" //En typescript no podemos asignar otro tipo de valor a la variable con la cual se inicializo.
@@ -26,11 +24,10 @@ const array:[] = []; //Le indicamos a typescript que debe ser un string.
 const arrayString: String[] = ["hola", "mundo"] //Le indicamos a typescript que va a ser un array de strings, en caso de colar algun otro tipo de dato este nos tirara un error
 
 
+
+
 /******************************************************  Clases   ****************************************************************/
-
-
-
-class Auto {
+class Vehiculo {
     private numPuertas:number; //El private es un metodo muy imporatne ya que este nos dice que nada mas debe ser posible asignar un valor a sus propiedades mediante los metodos, 
     private velocidad:number;
     private marca:string;
@@ -53,6 +50,34 @@ class Auto {
 }
 
 
-const ferrai = new Auto(2, 300, "ferrari") //Creamos el objeto
 // ferrai.numPuertas //Esto no es posible por que la propiedad fue puesta privada y es considerado una buena practica
 
+class Auto extends Vehiculo{ //Extender la clase nos ayuda a reultilizar el molde y poderle agregar mas propiedades. 
+
+    private cantidadRuedas: number;
+
+    constructor(numPuertas: number, velocidad: number, marca: string, cantidadRuedas: number ){ 
+        super(numPuertas, velocidad, marca) //Con el metodo super accedemos al cosntructor del objeto padre.
+        this.cantidadRuedas = cantidadRuedas;
+    }
+
+    getCantidadRuedas(): number {
+        return this.cantidadRuedas
+    }
+
+    setCantidadRuedas(cantidadRuedas: number){
+        this.cantidadRuedas = cantidadRuedas
+    }
+
+    getNumeroPuertas(): number{ 
+        return super.getNumberoPuertas() + 200 //Con el objeto super le indicamos que vamos aa llamar a la propiedad de el metodo padre.
+
+        /*
+            Polimorfismo es la capacidad que algo se comporte diferente dependiendo del contexto donde este , este ubicado. 
+
+        */
+    }
+}
+
+
+const ferrari = new Auto(2, 300, "ferrari", 4) //Creamos el objeto
