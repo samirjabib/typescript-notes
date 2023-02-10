@@ -5,9 +5,7 @@
     numero="2" //En typescript no podemos asignar otro tipo de valor a la variable con la cual se inicializo.
 
     Esto se llama inferencia de tipos. 
-
-
-
+    
     typescript solo va a ser una herramienta dentro del desarrollo, cuando la aplicacion este compilada va a estar
     en javascript vanila.
 
