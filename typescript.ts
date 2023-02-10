@@ -155,13 +155,29 @@ const alumnoInterface : AlumnoInterface = {
  //Todo en typescript es un tipo
 
 
- interface curso {
-    
+ interface Curso {
+    nombre:string;
+    duracion:number;
  }
 
  interface SamirProgramming { //Lo ideal es que cada interface represente un unico nivel de profundidad, entonces lo ideal es que cuando haya un  nuevo nivel, crear una nueva interface
     nombre:string;
     edad:number;
-    cursos:[]
+    cursos:Curso[]
  };
 
+
+ const logger = <T>(variable: T) => {   //Con el tipado generico lo que indicamos es que la variable va a ser tipada del tipo que le metamos en la funcion.
+    console.log(variable)
+ }
+
+//  logger<number>('hola') //Esto nos dara un error ya que estamos señalado que tiene que ser un number 
+logger<string>("hola")
+
+//Tambien podemos usar los tipos genericos en interfaces.
+
+
+interface GenericType <T>{
+    variable:T;
+    otraVariable: string;
+}
