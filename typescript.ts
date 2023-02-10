@@ -109,14 +109,27 @@ class Persona {
 
 /******************************************************  Class vs Interface   ****************************************************************/
 
-interface PersonaInterface { //Podemos mirar las interfaces como una especie de contrato. 
+interface PersonaInterface { //Podemos mirar las interfaces como una especie de contrato que se debe cumplir. 
     nombre:string;
     edad:number;
+    dni?:number // con el ? Podemos decir que una propiedad es algo opcional. 
+}
+
+interface AlumnoInterface extends PersonaInterface{ //Podemos extender tranquilamente las inferfaces para usar sus propiedades dentro de otra y agregarle nuevas
+    curso:string,
 }
 
 
 const personaInterface : PersonaInterface = {
     nombre:"samir",
     edad:26,
-    // dni:1067948715 //No podemos asignar propiedades que no estan en al inferface
+    dni:1067948715 
+    //No podemos asignar propiedades que no estan en al inferface. 
+}
+
+
+const alumnoInterface : AlumnoInterface = {
+    nombre:"samir",
+    edad:26,
+    curso:'typescript'
 }
