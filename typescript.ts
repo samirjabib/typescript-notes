@@ -108,3 +108,15 @@ class Persona {
 
 
 /******************************************************  Class vs Interface   ****************************************************************/
+
+interface PersonaInterface { //Podemos mirar las interfaces como una especie de contrato. 
+    nombre:string;
+    edad:number;
+}
+
+
+const personaInterface : PersonaInterface = {
+    nombre:"samir",
+    edad:26,
+    // dni:1067948715 //No podemos asignar propiedades que no estan en al inferface
+}
