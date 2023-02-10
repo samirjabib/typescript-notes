@@ -177,7 +177,36 @@ logger<string>("hola")
 //Tambien podemos usar los tipos genericos en interfaces.
 
 
-interface GenericType <T>{
-    variable:T;
-    otraVariable: string;
-}
+// interface GenericType <T>{
+//     variable:T;
+//     otraVariable: string;
+// }
+
+// const variable: GenericType<number> = { variable:' esto es un string'}
+// const variable2: GenericType<number> = { variable:10, otraVariable:'variable'}
+
+
+
+/******************************************************  Union e Intercepcion   ****************************************************************/
+
+interface PersonaInterface {
+    nombre: string;
+    edad: number;
+  }
+  
+  interface AlumnoInterface {
+    curso: string;
+  }
+  
+  const alumnoOPersona: PersonaInterface & AlumnoInterface = {
+      curso: 'React',
+      edad: 30,
+      nombre: 'Samir'
+  };
+
+
+  const alumnoOPersona2: PersonaInterface | AlumnoInterface = {
+    curso: 'React',
+    edad: 30,
+    nombre: 'Samir'
+};
