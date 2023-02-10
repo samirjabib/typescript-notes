@@ -152,3 +152,16 @@ const alumnoInterface : AlumnoInterface = {
 
 
 /******************************************************  Types   ****************************************************************/
+ //Todo en typescript es un tipo
+
+
+ interface curso {
+    
+ }
+
+ interface SamirProgramming { //Lo ideal es que cada interface represente un unico nivel de profundidad, entonces lo ideal es que cuando haya un  nuevo nivel, crear una nueva interface
+    nombre:string;
+    edad:number;
+    cursos:[]
+ };
+
