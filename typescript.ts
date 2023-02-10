@@ -40,7 +40,7 @@ class Vehiculo {
     }
 
 
-    getNumberoPuertas(): number { //Lo que nos esta diciendo este number, es este metodo va a retornar un valor de tipo number. 
+    getNumeroPuertas(): number { //Lo que nos esta diciendo este number, es este metodo va a retornar un valor de tipo number. 
         return this.numPuertas;
     }
  
@@ -70,7 +70,7 @@ class Auto extends Vehiculo{ //Extender la clase nos ayuda a reultilizar el mold
     }
 
     getNumeroPuertas(): number{ 
-        return super.getNumberoPuertas() + 200 //Con el objeto super le indicamos que vamos aa llamar a la propiedad de el metodo padre.
+        return super.getNumeroPuertas() + 200 //Con el objeto super le indicamos que vamos aa llamar a la propiedad de el metodo padre.
 
         /*
             Polimorfismo es la capacidad que algo se comporte diferente dependiendo del contexto donde este , este ubicado. 
@@ -79,5 +79,12 @@ class Auto extends Vehiculo{ //Extender la clase nos ayuda a reultilizar el mold
     }
 }
 
-
 const ferrari = new Auto(2, 300, "ferrari", 4) //Creamos el objeto
+const moto = new Vehiculo(2, 300, 'Moto')
+
+
+const arregloDeVehiculos : Vehiculo[] = [ ferrari, moto]
+
+for (const vehiculo of arregloDeVehiculos) {
+  console.log(vehiculo.getNumeroPuertas());
+}
