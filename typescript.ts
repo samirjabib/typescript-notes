@@ -31,9 +31,9 @@ const arrayString: String[] = ["hola", "mundo"] //Le indicamos a typescript que 
 
 
 class Auto {
-    numPuertas:number;
-    velocidad:number;
-    marca:string;
+    private numPuertas:number; //El private es un metodo muy imporatne ya que este nos dice que nada mas debe ser posible asignar un valor a sus propiedades mediante los metodos, 
+    private velocidad:number;
+    private marca:string;
 
 
     constructor(numPuertas: number, velocidad: number, marca: string){ //El constructor lo usamos para meter valores por defecto a nuestro objeto. 
@@ -46,4 +46,13 @@ class Auto {
     getNumberoPuertas(): number { //Lo que nos esta diciendo este number, es este metodo va a retornar un valor de tipo number. 
         return this.numPuertas;
     }
+ 
+    setNumeroPuertas(numPuertas : number){ // de esta manera le indicamos a el metodo que el parametro a recibir tiene que ser de tipo number. 
+        this.numPuertas = numPuertas
+    }
 }
+
+
+const ferrai = new Auto(2, 300, "ferrari") //Creamos el objeto
+// ferrai.numPuertas //Esto no es posible por que la propiedad fue puesta privada y es considerado una buena practica
+
